@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+          <h2>Sign Up</h2>
+          <p>Select your role and fill out the required details</p>
+        </div>
+        <div class="card-body">
+          <form
+            action="{{ url_for('signup') }}"
+            method="POST"
+            enctype="multipart/form-data">
+            <!-- Role Selection -->
+            <div class="form-group">
+              <label for="role">Role</label>
+              <select
+                id="role"
+                name="role"
+                class="form-control"
+                required
+                onchange="toggleFields()">
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="mentor">Mentor</option>
+              </select>
+            </div>
+
+            <!-- Common Fields -->
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="form-control"
+                placeholder="Enter your full name"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required />
+            </div>
+
+            <!-- Student-Only Fields -->
+            <div id="studentFields" style="display: none">
+              <div class="form-group">
+                <label for="preferredSubjects"
+                  >Preferred Subjects (to select multiple subjects please hold
+                  down the Ctrl key while clicking)</label
+                >
+                <select
+                  id="preferredSubjects"
+                  name="preferredSubjects[]"
+                  class="form-control"
+                  multiple
+                  required>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="Biology">Biology</option>
+                  <option value="English">English</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="grade">Grade/Year</label>
+                <input
+                  type="text"
+                  id="grade"
+                  name="grade"
+                  class="form-control"
+                  placeholder="Enter your grade or year"
+                  required />
+              </div>
+            </div>
+
+            <!-- Mentor-Only Fields -->
+            <div id="mentorFields" style="display: none">
+              <div class="form-group">
+                <label for="certificates">Certificates</label>
+                <input
+                  type="text"
+                  id="certificates"
+                  name="certificates"
+                  class="form-control"
+                  placeholder="Please upload your Certificates in a Drive and paste the Folder link here. Make sure the folder link is visible to everyone"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="experience">Experience (in years)</label>
+                <input
+                  type="number"
+                  id="experience"
+                  name="experience"
+                  class="form-control"
+                  placeholder="Enter your experience"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="personalEmail">Personal Email</label>
+                <input
+                  type="email"
+                  id="personalEmail"
+                  name="personalEmail"
+                  class="form-control"
+                  placeholder="Enter your personal email"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="iitEmail">IIT Email</label>
+                <input
+                  type="email"
+                  id="iitEmail"
+                  name="iitEmail"
+                  class="form-control"
+                  placeholder="Enter your IIT email"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="mobileNo">Contact Number</label>
+                <input
+                  type="tel"
+                  id="mobileNo"
+                  name="mobileNo"
+                  class="form-control"
+                  placeholder="Enter your contact number (Preferably WhatsApp)"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="category">Categories you want to teach </label>
+                <input
+                  type="text"
+                  id="category"
+                  name="category"
+                  class="form-control"
+                  placeholder="Enter the subject you want to teach"
+                  required />
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleFields() {
+        const role = document.getElementById("role").value;
+        document.getElementById("studentFields").style.display =
+          role === "student" ? "block" : "none";
+        document.getElementById("mentorFields").style.display =
+          role === "mentor" ? "block" : "none";
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

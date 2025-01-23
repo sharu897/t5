@@ -1,0 +1,256 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #080808;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+.content {
+    display: flex;
+}
+
+.text-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+}
+
+/* Registration Box Styles */
+.registration-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.registration-box h2 {
+    text-align: center;
+    color: #007BFF;
+}
+
+.registration-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-box input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.registration-box button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registration-box button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Login Section Styles */
+.login-section {
+    display: flex;
+    margin-top: 40px;
+}
+
+.left-section,
+.right-section {
+    flex: 1;
+}
+
+.left-section img {
+    max-width: 100%;
+}
+
+.right-section {
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #080808;
+    color: white;
+    padding: 20px;
+}
+
+.footer h2,
+.footer h3 {
+    margin-top: 0;
+}
+
+/* Program Section Styles */
+.programs {
+    padding: 20px;
+}
+
+.programs h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.programs-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Program Card Styles */
+.program-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 15px;
+    text-align: left;
+}
+
+.program-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.program-card h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.program-card p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.program-card a {
+    color: #6A0DAD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.program-card a:hover {
+    text-decoration: underline;
+}
+
+/* Program Button Styles */
+.explore-button {
+    background: #FF6C37;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.explore-button:hover {
+    background: #e65b2b;
+}
+
+/* Program Container Layout */
+.program-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.program-card {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.program-card:last-child {
+    border-right: none;
+}
+
+.program-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.program-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.program-card a.jee-link {
+    background-color: #ff6f61;
+}
+
+.program-card a.neet-link {
+    background-color: #ffa726;
+}

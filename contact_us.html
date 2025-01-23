@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form
+        method="POST"
+        action="{{ url_for('contact_us') }}"
+        class="needs-validation"
+        novalidate>
+        <div class="row g-3">
+          <!-- Name -->
+          <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Your Name Here"
+              required />
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="email@example.com"
+              required />
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+
+          <!-- Contact Number -->
+          <div class="col-md-6">
+            <label for="contact_no" class="form-label">Contact Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="contact_no"
+              name="contact_no"
+              placeholder="+91 12345 67890"
+              required />
+            <div class="invalid-feedback">
+              Please enter a valid contact number.
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="col-md-12">
+            <label for="message" class="form-label">Query</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message here..."
+              required></textarea>
+            <div class="invalid-feedback">Please enter your message.</div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Submit Button -->
+        <button class="w-15 btn btn-primary btn-success" type="submit">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <script>
+      // Bootstrap form validation script
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

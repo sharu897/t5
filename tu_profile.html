@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <!-- Profile Card -->
+      <div class="card shadow-lg">
+        <div class="card-header text-white bg-primary text-center">
+          <h4>Hello, {{ Username }}</h4>
+          <h5 class="mb-0">Role: {{ role }}</h5>
+        </div>
+        <div class="card-body">
+          <p class="text-muted text-center">Welcome to your profile page</p>
+          <hr />
+
+          <!-- About/Bio Section -->
+          <h5 class="text-primary">About / Bio</h5>
+          <p>{{ bio }}</p>
+
+          <!-- Educational Qualifications -->
+          <h5 class="text-primary">Educational Qualifications</h5>
+          <p>{{ educational_qualifications }}</p>
+
+          <!-- Educational Qualifications -->
+          <h5 class="text-primary">Category</h5>
+          <p>{{ category }}</p>
+
+          <!-- Experience -->
+          <h5 class="text-primary">Experience (in years)</h5>
+          <p>{{ experience }}</p>
+
+          <!-- Radius of Contact -->
+          <h5 class="text-primary">Available Service Location</h5>
+          <p>{{ radius_of_contact }} km</p>
+
+          <!-- Date of Birth -->
+          <!-- <h5 class="text-primary">Date of Birth</h5>
+                <p>{{ dob }}</p> -->
+
+          <!-- Registered Email
+                <h5 class="text-primary">Registered Email</h5>
+                <p>{{ email }}</p> -->
+
+          <!-- Preferred Service Location -->
+          <h5 class="text-primary">Preferred Service Location</h5>
+          <p>{{ preferred_service_location }}</p>
+
+          <!-- Edit Profile Button -->
+          <div class="text-center mt-4">
+            <form method="post" action="{{ url_for('edit_profile') }}">
+              <button class="btn btn-primary">Edit Profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

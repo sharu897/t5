@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protutor-Inspired Homepage</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"
+      rel="stylesheet" /> -->
+
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+      }
+
+      .navbar {
+        background-color: #002f6c;
+      }
+
+      .navbar-brand,
+      .nav-link {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      .hero-section {
+        background: linear-gradient(to right, #002f6c, #00509d);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .hero-section .btn {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+      }
+
+      .features-section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .feature-box {
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+
+      .feature-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-box img {
+        max-width: 80px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-section {
+        background-color: #f1f1f1;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .testimonial {
+        margin-bottom: 20px;
+      }
+
+      footer {
+        background-color: #002f6c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #00bcd4;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">T5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('a_signup') }}">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contact_us') }}"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1>One-to-One Mentorship</h1>
+      <p>Get personalized mentorship to excel in academics with IITians.</p>
+      <a href="{{ url_for('a_login') }}" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container text-center">
+      <div class="row mt-5">
+        <!-- First Box -->
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5506/5506561.png"
+              alt="Mentoring Icon"
+              style="width: 100px; height: auto; margin: 0 auto" />
+            <h5 class="mt-3">Personalized Mentorship</h5>
+            <p>One-on-one guidance tailored to your needs.</p>
+          </div>
+        </div>
+
+        <!-- Second Box -->
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img
+              src="https://cdn4.vectorstock.com/i/1000x1000/97/92/online-offline-switch-icon-or-on-off-slider-sign-vector-51397892.jpg"
+              alt="Online Offline Switch Icon"
+              style="width: 100px; height: auto; margin: 0 auto" />
+
+            <!-- <a href="https://cdn-icons-png.flaticon.com/512/1077/1077042.png" title="toggle icons">Toggle icons created by FR_Media - Flaticon</a> -->
+
+            <!-- <a
+              href="https://www.flaticon.com/free-icons/toggle"
+              title="toggle icons"
+              >Toggle icons created by Freepik - Flaticon</a
+            >
+
+            <img
+              src="https://www.flaticon.com/free-icons/toggle"
+              alt="Online Offline Switch Icon"
+              style="width: 100px; height: auto; margin: 0 auto" /> -->
+
+            <h5 class="mt-3">Flexible Learning</h5>
+            <p>Switch between online and offline learning modes.</p>
+          </div>
+        </div>
+
+        <!-- Third Box -->
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img
+              src="https://www.shutterstock.com/image-vector/proven-results-icon-symbol-vector-260nw-2354126747.jpg"
+              alt="Proven Results Icon"
+              style="width: 100px; height: auto; margin: 0 auto" />
+            <h5 class="mt-3">Proven Results</h5>
+            <p>Success stories of our mentorship programs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="testimonial-section" id="testimonials">
+      <h2 class="mb-5">What Our Students Say</h2>
+      <div class="testimonial">
+        <p>
+          "T5 has completely transformed my academic journey. The mentors
+          are exceptional!"
+        </p>
+        <p><strong>- A Happy Student</strong></p>
+      </div>
+      <div class="testimonial">
+        <p>
+          "I gained so much confidence and clarity thanks to the one-to-one
+          sessions. Highly recommended!"
+        </p>
+        <p><strong>- Another Student</strong></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2025 T5. All Rights Reserved. | Developed ❤️ by Sampriti and
+        Sayan |
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
